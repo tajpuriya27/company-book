@@ -1,12 +1,7 @@
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div>
-        <h1>CompanyBook</h1>
-      </div>
-      <div>
-        <span>Home</span>
-      </div>
+    <nav className="center-nav">
+      <h1>CompanyBook</h1>
     </nav>
   );
 };

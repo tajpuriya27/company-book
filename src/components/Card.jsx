@@ -20,18 +20,46 @@ const Card = (props) => {
     work_model,
     description,
   } = props;
+
+  const regex = /company\//g;
+  const initials = "https://www.linkedin.com/";
+  var concated_linkedin = null;
+  if (linkedin.match(regex)) {
+    concated_linkedin = initials.concat(linkedin);
+  }
   return (
-    <>
-      <h3>{company_name}</h3>
-      <h4>{location}</h4>
-      <p>{linkedin}</p>
-      <p>{website}</p>
-      <p>{company_type}</p>
-      <Smallbox textToShow={preferred_languages} id={id} />
-      <Smallbox textToShow={frameworks} id={id} />
-      <p>{work_model}</p>
-      <p>{description}</p>
-    </>
+    <div
+      className="card"
+      style={{ width: "fit-content", display: "inline-flex" }}
+    >
+      <div className="card-body">
+        <h3 className="card-title">{company_name}</h3>
+        <h6>{location}</h6>
+        {concated_linkedin ? (
+          <a href={concated_linkedin}>Visit Linkedin</a>
+        ) : (
+          linkedin
+        )}
+        <br />
+        {website.includes("http") ? (
+          <a href={website}>Visit Website</a>
+        ) : (
+          website
+        )}{" "}
+        <br />
+        <span>Programming Languages:</span>
+        <br />
+        <Smallbox textToShow={preferred_languages} id={id} />
+        <br />
+        <span>Frameworks/Stack:</span>
+        <br />
+        <Smallbox textToShow={frameworks} id={id} />
+        <hr />
+        <p>Company Type:{company_type}</p>
+        <p>Work Model: {work_model}</p>
+        <p className="card-text">{description}</p>
+      </div>
+    </div>
   );
 };
 
