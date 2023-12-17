@@ -1,0 +1,86 @@
+/* reset properties for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Variables */
+:root {
+  --primary-color: #faf6f3;
+  --primary-hover-color: #fff;
+  --contrast-color: #333;
+  --body-color: #d2d2d2;
+
+  --text-color: #555;
+  --text-hover-color: #000;
+  --contrast-text-color: #eee;
+  --contrast-text-hover-color: #fff;
+
+  --primary-font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+/* nav,
+footer {
+  background-color: var(--primary-color);
+  color: var(-text-color);
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 999;
+  width: 100%;
+} */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-container {
+  margin: auto;
+}
+
+.footer-class {
+  position: relative;
+  bottom: 0;
+}
+
+.container {
+  border: #000 1px solid;
+  max-width: 1080px;
+  background-color: red;
+}
+
+.left {
+  border: 1px solid #fc1414;
+  position: relative;
+  left: 0;
+  width: 10%;
+  /* height: 100vh; */
+}
+
+.right {
+  border: 1px solid #fc1414;
+  position: relative;
+  right: 0;
+  width: 10%;
+  /* height: 100vh; */
+}
+
+.small-box {
+  /* border: 1px solid #fc1414; */
+  border-radius: 5px;
+  background-color: #fff;
+  display: inline-block;
+  box-shadow: 0 0 50px #ccc;
+  padding: 0.5rem;
+  margin: 5px 0 5px 5px;
+}
