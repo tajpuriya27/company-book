@@ -1,15 +1,14 @@
 import PropTypes from "prop-types";
 
-const Smallbox = ({ textToShow, id }) =>
-  textToShow.map((text) => (
-    <div key={id} className="small-box">
+const Smallbox = ({ textToShow }) =>
+  textToShow.map((text, index) => (
+    <div key={index} className="small-box">
       {text}
     </div>
   ));
 
 const Card = (props) => {
   const {
-    id,
     company_name,
     location,
     linkedin,
@@ -37,11 +36,11 @@ const Card = (props) => {
         <h6>{location}</h6>
         <span>Programming Languages:</span>
         <br />
-        <Smallbox textToShow={preferred_languages} id={id} />
+        <Smallbox textToShow={preferred_languages} />
         <br />
         <span>Frameworks/Stack:</span>
         <br />
-        <Smallbox textToShow={frameworks} id={id} />
+        <Smallbox textToShow={frameworks} />
         <hr />
         <p>Company Type:{company_type}</p>
         <p>Work Model: {work_model}</p>

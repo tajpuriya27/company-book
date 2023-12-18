@@ -5,6 +5,7 @@ import { useState } from "react";
 // console.log("companies", companies);
 const Content = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [typedTerm, setTypedTerm] = useState("");
 
   const searchedCompanies = companies.filter((val) => {
     if (searchTerm === "") {
@@ -15,18 +16,37 @@ const Content = () => {
       return val;
     }
   });
+
+  const handleClick = (event) => {
+    event.preventDefault();
+
+    setSearchTerm(typedTerm);
+  };
+
   return (
     <div className="content-container">
       <h1>Companies</h1>
-      <input
-        type="text"
-        placeholder="Search Company Name....."
-        autoFocus
-        value={searchTerm}
-        onChange={(event) => {
-          setSearchTerm(event.target.value);
-        }}
-      />
+      <form
+        className="d-flex"
+        role="search"
+        style={{ maxWidth: "500px", margin: "auto" }}
+        onSubmit={handleClick}
+      >
+        <input
+          className="form-control me-2"
+          type="search"
+          placeholder="Search company name"
+          aria-label="Search"
+          value={typedTerm}
+          onChange={(event) => {
+            setTypedTerm(event.target.value);
+          }}
+        ></input>
+        <button className="btn btn-outline-success" type="submit">
+          Search
+        </button>
+      </form>
+
       <div className="companies-container">
         {searchedCompanies.map((company) => (
           <Card key={company.id} {...company} />
