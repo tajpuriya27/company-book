@@ -20,7 +20,7 @@ const Content = () => {
       <h1>Companies</h1>
       <input
         type="text"
-        placeholder="Search First Name....."
+        placeholder="Search Company Name....."
         autoFocus
         value={searchTerm}
         onChange={(event) => {
