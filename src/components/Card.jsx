@@ -29,7 +29,12 @@ const Card = (props) => {
   return (
     <div
       className="card"
-      style={{ width: "305px", margin: "10px", display: "inline-flex" }}
+      style={{
+        width: "305px",
+        margin: "10px",
+        display: "inline-flex",
+        height: "450px",
+      }}
     >
       <div className="card-body">
         <h3 className="card-title">{company_name}</h3>
