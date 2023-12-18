@@ -25,11 +25,10 @@ const Content = () => {
 
   return (
     <div className="content-container">
-      <h1>Companies</h1>
       <form
         className="d-flex"
         role="search"
-        style={{ maxWidth: "500px", margin: "auto" }}
+        style={{ maxWidth: "500px", margin: "auto", marginTop: "20px" }}
         onSubmit={handleClick}
       >
         <input
